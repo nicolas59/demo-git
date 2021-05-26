@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Display folder') {
             steps {
+                echo '#### ##### Display folder ########'
                 sh '''
                 ls -lrt
                 ls -lrt data
