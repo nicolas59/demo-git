@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Prepare') {
+            steps {
+                git url:'https://github.com/nicolas59/epsi-mspr-data', branch:'main' 
+            }
+        }
+        stage('Display folder') {
+            steps {
+                sh '''
+                ls -lrt
+                ls -lrt data
+                ''' 
+            }
+        }
+    }
+}
